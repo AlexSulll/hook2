@@ -1,4 +1,3 @@
-/* Общие стили */
 * {
     box-sizing: border-box;
 }
@@ -14,7 +13,7 @@ body {
     background-color: #f7f7f7;
 }
 .wrapper, #nav, #header, #footer {
-    min-width: 320px; /* Минимальная ширина для адаптивности */
+    min-width: 320px;
 }
 #header {
     background-color: #f4f4f4;
@@ -263,7 +262,6 @@ h1
 }
 
 
-/* Адаптивность для iPhone 11 Pro Max */
 @media (max-width: 430px) {
     body {
         font-size: 14px;
@@ -303,7 +301,7 @@ h1
         display: block;
     }
     .table-wrapper table {
-        font-size: 0.8em; /* Уменьшить размер текста */
+        font-size: 0.8em;
     }
     .table-wrapper th, .table-wrapper td {
         padding: 5px;

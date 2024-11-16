@@ -10,18 +10,20 @@ html, body {
     background-color: #f7f7f7;
 }
 
+/* Заголовок */
 #header {
     background-color: #f4f4f4;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 #header h1 {
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
+/* Навигация */
 #nav {
     background-color: #eee;
     border-top: 1px solid #ccc;
@@ -34,6 +36,7 @@ html, body {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #nav li {
@@ -43,9 +46,10 @@ html, body {
 #nav a {
     display: block;
     color: black;
-    padding: 10px 25px;
+    padding: 10px 15px;
     text-decoration: none;
     border-right: 1px solid #ccc;
+    font-size: 14px;
 }
 
 #nav li:last-child a {
@@ -58,9 +62,9 @@ html, body {
 
 /* Основной контент */
 .wrapper {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 15px;
+    max-width: 100%;
+    margin: 15px auto;
+    padding: 10px;
     background-color: #fafafa;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -68,29 +72,29 @@ html, body {
 
 /* Фильтры */
 #filters {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #filters h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
 #filter-form {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
 #filter-form label {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     display: block;
 }
 
 #filter-form input,
 #filter-form button {
-    padding: 8px;
+    padding: 6px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -110,24 +114,27 @@ html, body {
 
 /* Таблица */
 #history-table {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 #history-table h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    display: block;
 }
 
 table th,
 table td {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 8px;
+    font-size: 12px;
     text-align: left;
 }
 
@@ -144,11 +151,88 @@ table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
+table th, table td {
+    white-space: nowrap;
+}
+
 /* Футер */
 #footer {
     border-top: 1px solid #ccc;
     text-align: center;
     padding: 10px 0;
     background-color: #f4f4f4;
-    font-size: 0.8em;
+    font-size: 0.7em;
+}
+
+/* Адаптивные стили для телефона */
+@media (max-width: 430px) {
+    /* Заголовок */
+    #header h1 {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    /* Навигация */
+    #nav ul {
+        flex-direction: column;
+    }
+
+    #nav li {
+        width: 100%;
+    }
+
+    #nav a {
+        text-align: center;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #nav li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Фильтры */
+    #filters h2 {
+        font-size: 16px;
+    }
+
+    #filter-form {
+        gap: 8px;
+    }
+
+    #filter-form label {
+        font-size: 12px;
+    }
+
+    #filter-form input,
+    #filter-form button {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    #filter-form button {
+        padding: 8px;
+    }
+
+    /* Таблица */
+    #history-table h2 {
+        font-size: 16px;
+    }
+
+    table th,
+    table td {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Футер */
+    #footer p {
+        font-size: 0.6em;
+    }
 }
