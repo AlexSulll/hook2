@@ -82,9 +82,9 @@ body {
     border-radius: 8px;
 }
 
-.wrapper, #nav, #header, #footer {
-    min-width: 768px;
-}
+/*.wrapper, #nav, #header, #footer {*/
+/*    min-width: 768px;*/
+/*}*/
 
 /* Сайдбары */
 #sidebar1 {

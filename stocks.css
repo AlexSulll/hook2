@@ -14,31 +14,35 @@ body {
     background-color: #f7f7f7;
 }
 .wrapper, #nav, #header, #footer {
-    min-width: 768px;
+    min-width: 320px; /* Минимальная ширина для адаптивности */
 }
 #header {
     background-color: #f4f4f4;
+    padding: 20px;
+    text-align: left;
 }
 #header h1 {
-    font-size: 24px;
+    font-size: 1.5em;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 30px 30px 30px 10px;
-    clear: both;
 }
 #nav {
     background-color: #eee;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
+#nav ul {
+    display: flex;
+    justify-content: left;
+}
 #nav li {
-    float: left;
     list-style: none;
+    margin: 0 10px;
 }
 #nav a {
     display: block;
     color: black;
-    padding: 10px 25px;
+    padding: 10px 15px;
     text-decoration: none;
     border-right: 1px solid #ccc;
 }
@@ -48,35 +52,35 @@ body {
 #nav a:hover {
     font-weight: bold;
 }
-#nav:after {
-    content: " ";
-    display: table;
-    clear: both;
-}
 .wrapper {
     background-color: #f7f7f7;
 }
 #footer {
     border-top: 1px solid #ccc;
-    font-size: .8em;
+    font-size: 0.8em;
     text-align: center;
     padding: 10px 10px 30px 10px;
 }
-#nav ul, #header h1, .wrapper, #footer p {
+#nav ul, .wrapper, #footer p
+{
     max-width: 1200px;
     margin: 0 auto;
 }
-
+h1
+{
+    margin-bottom: 10px;
+}
 /* Стили для статьи */
 #article {
     background-color: #fafafa;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin: 10px auto;
     padding: 15px;
-    width: 60%;
+    max-width: 95%;
     font-size: 0.9em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 #article h2 {
     font-size: 1.3em;
@@ -128,6 +132,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    font-size: 0.9em;
 }
 .table-container table th,
 .table-container table td {
@@ -149,7 +154,7 @@ body {
 /* Стили для формы добавления */
 .add-data form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 20px;
     padding: 10px;
@@ -158,16 +163,15 @@ body {
     border-radius: 5px;
 }
 .add-data label {
-    grid-column: 1 / 3;
+    margin-bottom: 5px;
 }
 .add-data input,
 .add-data button {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 .add-data button {
-    grid-column: 1 / 3;
     background-color: #005599;
     color: white;
     cursor: pointer;
@@ -195,7 +199,7 @@ body {
 /* Подсказки */
 [data-hint] {
     position: relative;
-    cursor: hint;
+    cursor: help;
 }
 [data-hint]::after {
     opacity: 0;
@@ -222,4 +226,86 @@ body {
     top: auto;
     bottom: -5px;
     transform: translate(-50%, 100%);
+}
+.table-wrapper {
+    width: 100%; /* Таблица адаптируется к ширине родителя */
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    -webkit-overflow-scrolling: touch; /* Улучшение для мобильных устройств */
+    border: 1px solid #ccc; /* Для выделения границ */
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.table-wrapper table {
+    width: 100%; /* Таблица займет всю ширину контейнера */
+    border-collapse: collapse;
+    min-width: 600px; /* Минимальная ширина для структуры таблицы */
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table-wrapper th {
+    background-color: #005599;
+    color: #fff;
+}
+
+.table-wrapper tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-wrapper tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Адаптивность для iPhone 11 Pro Max */
+@media (max-width: 430px) {
+    body {
+        font-size: 14px;
+    }
+
+    #header h1 {
+        font-size: 1.2em;
+    }
+
+    #nav ul {
+        flex-wrap: wrap;
+    }
+
+    .filters form,
+    .add-data form {
+        flex-direction: column;
+    }
+
+    .table-container table {
+        font-size: 0.8em;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #article {
+        padding: 10px;
+    }
+
+    .filters label {
+        display: block;
+    }
+    .table-wrapper table {
+        font-size: 0.8em; /* Уменьшить размер текста */
+    }
+    .table-wrapper th, .table-wrapper td {
+        padding: 5px;
+    }
 }

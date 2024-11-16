@@ -1,40 +1,42 @@
+/* Общие настройки */
 * {
     box-sizing: border-box;
 }
 
-html, body {
+body {
     margin: 0;
     padding: 0;
     font-family: Verdana, Arial, sans-serif;
     background-color: #f7f7f7;
 }
 
+/* Хедер */
 #header {
     background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px 0;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
 }
 
 #header h1 {
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
 }
 
+/* Навигация */
 #nav {
-    background-color: #eee;
+    background-color: #f4f4f4;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    text-align: center;
 }
 
 #nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
+    gap: 5px;
 }
 
 #nav li {
@@ -42,46 +44,42 @@ html, body {
 }
 
 #nav a {
-    display: block;
+    display: inline-block;
     color: black;
-    padding: 10px 25px;
+    padding: 8px 15px;
     text-decoration: none;
-    border-right: 1px solid #ccc;
-}
-
-#nav li:last-child a {
-    border-right: none;
+    font-size: 14px;
 }
 
 #nav a:hover {
     font-weight: bold;
+    background-color: #eee;
 }
 
 /* Основной контент */
 .wrapper {
-    max-width: 1200px;
-    margin: 20px auto;
     padding: 15px;
-    background-color: #fafafa;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+}
+
+#filters {
+    margin-bottom: 20px;
 }
 
 #filters h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 #filters form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
 }
 
-#filters label {
-    font-size: 14px;
-    font-weight: bold;
-    display: block;
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 #filters input,
@@ -91,7 +89,6 @@ html, body {
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #fff;
 }
 
 #filters button {
@@ -105,42 +102,61 @@ html, body {
     background-color: #0056b3;
 }
 
+/* История */
 #history h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 #history table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
 }
 
-#history table thead {
+#history th,
+#history td {
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+#history thead {
     background-color: #007BFF;
     color: white;
 }
 
-#history table th,
-#history table td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-#history table tbody tr:nth-child(odd) {
+#history tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
-}
-
-#history table tbody tr:hover {
-    background-color: #f1f1f1;
 }
 
 /* Футер */
 #footer {
-    border-top: 1px solid #ccc;
     text-align: center;
     padding: 10px 0;
     background-color: #f4f4f4;
-    font-size: 0.8em;
+    font-size: 12px;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    #header h1 {
+        font-size: 16px;
+    }
+
+    #nav a {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    #filters h2,
+    #history h2 {
+        font-size: 14px;
+    }
+
+    #history th,
+    #history td {
+        font-size: 10px;
+        padding: 6px;
+    }
 }
